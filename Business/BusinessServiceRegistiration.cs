@@ -9,13 +9,8 @@ namespace Business
     {
         public static IServiceCollection AddBusinessService(this IServiceCollection services)
         {
-
-
-
             var assembly = Assembly.GetExecutingAssembly();
             services.AddAutoMapper(assembly);
-
-
 
             services.AddScoped<IEtkinlikIzinService, EtkinlikIzinManager>();
             services.AddScoped<IEtkinlikService, EtkinlikManager>();
@@ -25,6 +20,7 @@ namespace Business
             services.AddScoped<ISalonBolumService, SalonBolumManager>();
             services.AddScoped<ISalonPlanService, SalonPlanManager>();
             services.AddScoped<ISalonService, SalonManager>();
+            services.AddScoped<IR2Service, R2Manager>();
             //services.AddScoped<ITokenHelper, JwtHelper>();
 
             return services;
